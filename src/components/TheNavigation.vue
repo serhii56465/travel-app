@@ -1,13 +1,15 @@
 <template>
   <div id="nav">
-    <router-link id="logo" to="/">Vue Travel App</router-link>
-    <router-link
+    <AppLink id="logo" to="/">Vue Travel App</AppLink>
+    <AppLink
       v-for="destination in destinations"
       :key="destination.id"
       :to="{name: 'destination.show', params:{id: destination.id, slug: destination.slug}}"
     >
       {{ destination.name }}
-    </router-link>
+    </AppLink>
+    <AppLink :to="{name: 'protected'}">Dashboard</AppLink>
+    <AppLink to="https://en.wikipedia.org/wiki/Ukraine">Ukraine</AppLink>
   </div>
 </template>
 
